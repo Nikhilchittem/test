@@ -62,8 +62,8 @@ az group deployment create --resource-group {project-resource-group/VNET} --temp
 The service template is abstracted to support deployments in any region, stage, or project.
 The template acquires a set of parameters from the global keyvault and assumes those values have been initialized from previous [Initialize Global Keyvault](#initialize-global-keyvault) section.
 
-Parameter Name                        | Type             | Description
---------------------|-----------|---------|-----------------------------------------
+Parameter Name      | Type      | Description
+--------------------|-----------|----------------------------------------
 loadbalancerSku     | String    | The type of load balancer to deploy. Valid values: Basic, Standard.
 lbRules             | Object    | Load Balancer Rules.
 probeProperties     | Object    | Probe Properties
@@ -250,5 +250,4 @@ None
 DA Azure logs are found at the following locations
 
 Bootstrap log - `/tmp/bootstrap.log`
-
 
