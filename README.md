@@ -107,12 +107,12 @@ az group deployment create --resource-group {project-resource-group/VNET} --temp
 
 The Service template deploys PostgreSQL database in Jeppesen-VDC subscription for JHAS/JPDC application services. The template uses the existing networking configuration that are in use within the Jeppesen-VDC subscription. In-order to execute the template make sure to update the Key Vault and Networking Parameters.
 
-## Initialization 
+#### Initialization 
 
 Update the KeyValut parameters in the PostgreSQL deployment template.
 
-Parameter Name                        | Type             | Description
---------------------|-----------|---------|-----------------------------------------
+Parameter Name      | Type      | Description
+--------------------|-----------|----------------------------------------
 adminUsername       | String    | The name of the adminUser retrieve from keyvault.
 adminPassword       | SecureString    | Values of the adminPassword retrieve from keyvault.
 dbserverName        | String    | The name of the PostgreSQL server.
@@ -143,8 +143,8 @@ az group deployment create --resource-group {project-resource-group/VNET} --temp
 
 The Service template deploys IBMQ in Jeppesen-VDC subscription for application services to decouple applications and services from each other and to transfer data between different applications and services using messages that implements workflows for message ordering.  
 
-Parameter Name                        | Type             | Description
---------------------|-----------|---------|-----------------------------------------
+Parameter Name      | Type      | Description
+--------------------|-----------|----------------------------------------
 vmSku               | String    | Size of VMs in the cluster.
 diskType            | String    | The Storage type of the data. adminUsername       | String    | The name of the adminUser retrieve from keyvault.
 adminPassword       | SecureString    | Values of the adminPassword retrieve from keyvault.
@@ -212,7 +212,7 @@ or
 ### Service Components
 
 Component           | Resource Type      | Description
---------------------|--------------------|--------------
+--------------------|--------------------|-------------------------------
 Keyvault            | Azure Key Vault    | Store service configuration and sensitive data like credentials and passwords.
 VM Availability Set | Azure Availability set | to increase availability and reliability of Virtual Machines.  
 Load Balancer       | Azure Load Balancer | Load balancer to distribute load across instances in Availability set.
@@ -225,9 +225,8 @@ In addition to the standard infrastructure NSG configuration baseline requires:
 
 Service     | Port | Direction | Source               | Destination          | Description
 ------------|-------|-----------|----------------------|----------------------|-------------------------------------
-HTTP        | 80   | Inbound   | Virtual Network      | Any  
-|Allow HTTP
-HTTPS       | 443   | Inbound   | Virtual Network      | Any                  | Allow HTTPS
+HTTP        | 80   | Inbound   | Virtual Network      | Any  |Allow HTTP
+HTTPS       | 443   | Inbound   | Virtual Network      | Any  | Allow HTTPS
 
 ### Diagram
 
